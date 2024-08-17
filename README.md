@@ -1,3 +1,7 @@
+Aqui está o `README.md` atualizado, incluindo a seção para testar a aplicação:
+
+---
+
 # Deployment com Vagrant, Ansible e Shell Script
 
 Este repositório configura um ambiente de desenvolvimento com três servidores virtuais usando Vagrant, Ansible e Shell Script. O ambiente é composto por um control-node, um servidor de aplicação e um servidor de banco de dados.
@@ -92,9 +96,33 @@ O `db01` é onde o banco de dados será instalado e configurado.
 6. **Verificação**
    - Verifique se os servidores foram configurados corretamente e se os serviços estão funcionando como esperado.
 
+## Como Testar a Aplicação
+
+1. **Enviar uma Requisição de Criação**
+   - Use o arquivo `note.json` para enviar uma requisição para criar um novo item na aplicação:
+     ```bash
+     curl -H "Content-Type: application/json" --data @note.json http://app01:8080/api/notes
+     ```
+
+2. **Verificar os Itens Criados**
+   - Para verificar se o item foi criado com sucesso, execute:
+     ```bash
+     curl http://app01:8080/api/notes
+     ```
+   - A resposta deve mostrar a lista de itens, incluindo o que você acabou de criar, similar ao exemplo abaixo:
+     ```json
+     [
+       {"id":1,"title":"Envio da requisicao","content":"Estudos de devops","createdAt":"2024-08-17T17:28:24.000+00:00","updatedAt":"2024-08-17T17:28:24.000+00:00"}
+     ]
+     ```
+
 ## Observações
 
 - O `config_provision.sh` no control-node gera uma chave SSH que é usada para acessar os outros servidores. Garanta que o control-node esteja totalmente operacional antes de iniciar os outros servidores.
 - O template `notes.service` é utilizado para criar um serviço Systemd que gerencia a aplicação Java.
 - O arquivo `application.properties` contém configurações específicas para a conexão com o banco de dados e Hibernate.
 - O arquivo de variáveis `main.yaml` define credenciais e configurações do MySQL, incluindo usuários e bancos de dados.
+
+---
+
+Se precisar de mais ajustes ou tiver outras perguntas, estou à disposição!
