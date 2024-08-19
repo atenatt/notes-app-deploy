@@ -89,8 +89,8 @@ O `db01` é onde o banco de dados será instalado e configurado.
 5. **Executar os Playbooks Ansible**
    - No `control-node`, execute os playbooks Ansible para configurar o ambiente:
      ```bash
-     ansible-playbook -i /etc/ansible/hosts /control-node/playbooks/db.yaml
-     ansible-playbook -i /etc/ansible/hosts /control-node/playbooks/app.yaml
+     ansible-playbook -i /etc/ansible/hosts /vagrant/playbooks/db.yaml
+     ansible-playbook -i /etc/ansible/hosts /vagrant/playbooks/app.yaml
      ```
 
 6. **Verificação**
