@@ -1,7 +1,3 @@
-Aqui está o `README.md` atualizado, incluindo a seção para testar a aplicação:
-
----
-
 # Deployment com Vagrant, Ansible e Shell Script
 
 Este repositório configura um ambiente de desenvolvimento com três servidores virtuais usando Vagrant, Ansible e Shell Script. O ambiente é composto por um control-node, um servidor de aplicação e um servidor de banco de dados.
